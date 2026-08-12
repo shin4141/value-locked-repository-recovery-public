@@ -4,7 +4,40 @@
 
 Evidence-bounded boundary audits for open-source software and AI-assisted systems.
 
-I look for failures that are easy to miss when each component appears correct in isolation: authorization that survives revocation, state that changes between validation and execution, retries that repeat external effects, or temporary capabilities that outlive the boundary that was supposed to end them.
+## Why normal safety intuition is incomplete
+
+Better models are valuable. They can improve reasoning, reduce answer errors, and make individual tasks more reliable.
+
+But **better model intelligence does not automatically repair the surrounding control boundary**: the permissions, state transitions, tool execution, retries, revocation paths, and external effects around the model.
+
+That distinction matters because many consequential failures do not begin with a bad model answer. They emerge across time, authority, execution, recovery, or scope expansion — even when each component appears to behave correctly in isolation.
+
+These are different claims:
+
+- **Model accuracy ≠ system integrity**
+- **Local success ≠ end-to-end correctness**
+- **No visible incident ≠ a boundary that is still safe**
+- **Pilot-safe ≠ scale-safe**
+- **Current authority ≠ previously issued authority**
+- **Failure reported ≠ no external effect occurred**
+
+### Pilot-safe does not automatically mean scale-safe
+
+A rollout may begin with broad permission but little protected value. The pilot succeeds. Then more data, permissions, integrations, users, and consequential actions accumulate. If the original boundary is never re-qualified, evidence that the pilot was safe does not establish that the scaled system is safe.
+
+This is not an argument against AI adoption or model improvement. It is a reason to test the system boundary again when the value, authority, or operating scope changes.
+
+---
+
+## What can still fail
+
+I look for boundary failures that normal component-level checks can miss:
+
+- authorization that survives revocation
+- state that changes between validation and execution
+- retries that repeat or compound external effects
+- temporary capabilities that outlive the boundary that was supposed to end them
+- a successful local operation that does not produce the intended durable result
 
 The goal is not to produce the largest possible bug list.
 
@@ -12,7 +45,7 @@ The goal is to identify **what the product is supposed to protect**, find where 
 
 ---
 
-## How the work is structured
+## What I look for
 
 **Protected Object → Hidden Equivalence → Frozen Prediction → Local Proof → Private Disclosure**
 
@@ -41,6 +74,10 @@ Examples:
 - retry ≈ idempotent recovery
 - validated state ≈ executed state
 - temporary credential ≈ temporary authority
+
+---
+
+## How I prove it
 
 ### 3. Frozen Prediction
 
@@ -142,24 +179,6 @@ Unless explicitly authorized otherwise:
 Evidence is separated from interpretation.
 
 A finding is only claimed to the extent that the reproduced result supports it.
-
----
-
-## Why this exists
-
-Many failures do not come from obviously bad code.
-
-They appear when individually reasonable systems meet across time, authority, recovery, or state transitions.
-
-The useful question is often not:
-
-> Is this component secure?
-
-but:
-
-> **After the state changes, is the protected object still guarded by the same rule?**
-
-That question is increasingly important as software gains more automation, more asynchronous execution, more agents, and more authority-bearing intermediate state.
 
 ---
 
