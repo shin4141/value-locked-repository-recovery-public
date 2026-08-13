@@ -4,6 +4,22 @@
 
 Evidence-bounded boundary audits for open-source software and AI-assisted systems.
 
+**Paid, bounded private reviews available.** I examine software and AI-assisted systems where a local success signal may not prove the protected outcome — authority, billing, external effect, or durable state — is actually final.
+
+**Typical boundaries**
+
+- access revoked ≠ previously issued authority dead
+- retry succeeded ≠ first external effect never happened
+- billing completed ≠ every source cost recovered exactly once
+
+**Representative proof:** In a controlled internal state-machine test, I reproduced a crash state where a run remained marked active while its documented completion and public restart path became unreachable. This is an internal validation example, not a client disclosure or a production-incident claim.
+
+**Trust boundary:** public or explicitly authorized source; local or synthetic testing; no production probing, customer data, or real credentials unless explicitly authorized.
+
+**Paid private review:** `siriusa.paper@gmail.com`
+
+---
+
 ## Why normal safety intuition is incomplete
 
 Better models are valuable. They can improve reasoning, reduce answer errors, and make individual tasks more reliable.
