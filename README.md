@@ -128,6 +128,14 @@ A state is valid when checked, but a different state is used when the consequent
 
 An operation reports failure, recovery is attempted, and an external side effect from the first attempt survives — allowing the recovery action to compound it.
 
+### Representative validation example
+
+The following is an internal validation example, not a client disclosure or a claim about a production incident.
+
+In one state-machine system tested in a controlled environment, a crash could leave the run marked as still active while making the documented completion path unreachable. The local components had not necessarily failed in isolation, but the system no longer had a valid public restart point and could not reliably reach its own completion gate.
+
+The issue was reproduced as a **state-transition and restartability failure**, rather than described as a generic reliability concern. The evidence was preserved as an as-of result instead of rewriting the interrupted run as complete.
+
 ---
 
 ## Available for private audit work
