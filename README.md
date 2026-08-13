@@ -199,6 +199,25 @@ https://github.com/shin4141/decision-os-paper
 
 ---
 
+## Commercial availability
+
+I am an independent researcher and practitioner behind Value-Locked Repository Recovery.
+
+I am available for **paid, bounded private audit and review work** for repositories, AI-assisted systems, and operational workflows.
+
+Typical engagements focus on boundaries around:
+
+- authorization and revocation
+- billing and financial state
+- retries and external side effects
+- migrations and historical continuity
+- AI-agent permissions and execution
+- state transitions that can appear locally correct while the protected outcome is not yet final
+
+An engagement does not require a confirmed vulnerability in advance. A useful result may be either a reproducible finding or a bounded disproof showing that the suspected boundary is correctly enforced.
+
+For paid audit work, private review, or research collaboration, contact **Shin (@shin4141)** through the contact information on the GitHub profile.
+
 ## Private inquiries
 
 Private audit work and research collaboration are welcome.
