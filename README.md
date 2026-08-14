@@ -242,6 +242,13 @@ An engagement does not require a confirmed vulnerability in advance. A useful re
 
 For paid audit work, private review, or research collaboration, contact **Shin (@shin4141)** through the contact information on the GitHub profile.
 
+## Public OSS repair contributions
+
+- [`pooza/makoto2` issue #54](https://github.com/pooza/makoto2/issues/54) — Distinguish an unreadable `/proc` boundary from a process that disappeared during enumeration, so the health result does not treat unknown state as clean. [PR #56](https://github.com/pooza/makoto2/pull/56) — **SUBMITTED**
+- [`rictaworks/questboard` issue #97](https://github.com/rictaworks/questboard/issues/97) — Show an existing member's current role when a share URL is opened while preserving the first-time join flow. [PR #151](https://github.com/rictaworks/questboard/pull/151) — **SUBMITTED**
+
+These are public OSS contributions, not client engagements.
+
 ## Private inquiries
 
 Private audit work and research collaboration are welcome.
