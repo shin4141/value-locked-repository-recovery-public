@@ -18,6 +18,18 @@ Evidence-bounded boundary audits for open-source software and AI-assisted system
 
 **Paid private review:** `siriusa.paper@gmail.com`
 
+### External OSS trust proof
+
+**3 independent upstream merges** across unrelated public repositories:
+
+- [`rictaworks/questboard` PR #151](https://github.com/rictaworks/questboard/pull/151) — **MERGED**
+- [`mldsveda/PyScrappy` PR #148](https://github.com/mldsveda/PyScrappy/pull/148) — **MERGED** after the maintainer locally verified the repair and regression coverage
+- [`gren-lang/core` PR #135](https://github.com/gren-lang/core/pull/135) — **MERGED**
+
+A fourth repair, [`pooza/makoto2` PR #56](https://github.com/pooza/makoto2/pull/56), has received substantive maintainer review; requested changes were addressed and re-review is pending.
+
+These are public OSS contributions, not client engagements or evidence of paid commercial conversion.
+
 ---
 
 ## Why normal safety intuition is incomplete
@@ -244,13 +256,14 @@ For paid audit work, private review, or research collaboration, contact **Shin (
 
 ## Public OSS repair contributions
 
-**Independent upstream merges: 1**
+**Independent upstream merges: 3**
 
-- [`pooza/makoto2` issue #54](https://github.com/pooza/makoto2/issues/54) — Distinguish an unreadable `/proc` boundary from a process that disappeared during enumeration, so the health result does not treat unknown state as clean. [PR #56](https://github.com/pooza/makoto2/pull/56) — **SUBMITTED**
+- [`pooza/makoto2` issue #54](https://github.com/pooza/makoto2/issues/54) — Distinguish an unreadable `/proc` boundary from a process that disappeared during enumeration, so the health result does not treat unknown state as clean. [PR #56](https://github.com/pooza/makoto2/pull/56) — **HUMAN SUBSTANTIVE REVIEWED / CHANGES ADDRESSED / RE-REVIEW PENDING**
 - [`rictaworks/questboard` issue #97](https://github.com/rictaworks/questboard/issues/97) — Show an existing member's current role when a share URL is opened while preserving the first-time join flow. [PR #151](https://github.com/rictaworks/questboard/pull/151) — **MERGED**
 - [`ritsth/job-autofill-extension` issue #198](https://github.com/ritsth/job-autofill-extension/issues/198) — Preserve known company and role metadata when re-saving a posting from a page that supplies blank values. [PR #215](https://github.com/ritsth/job-autofill-extension/pull/215) — **SUBMITTED**
 - [`Johnkothapalli/python-code-health-analyzer` issue #16](https://github.com/Johnkothapalli/python-code-health-analyzer/issues/16) — Recover from malformed cached reports as cache misses without hiding SQLite operational failures. [PR #19](https://github.com/Johnkothapalli/python-code-health-analyzer/pull/19) — **SUBMITTED**
-- [`mldsveda/PyScrappy` issue #144](https://github.com/mldsveda/PyScrappy/issues/144) — Preserve URL and adaptive-store context across derived selectors so chained adaptive selection keeps its site namespace. [PR #148](https://github.com/mldsveda/PyScrappy/pull/148) — **SUBMITTED**
+- [`mldsveda/PyScrappy` issue #144](https://github.com/mldsveda/PyScrappy/issues/144) — Preserve URL and adaptive-store context across derived selectors so chained adaptive selection keeps its site namespace. [PR #148](https://github.com/mldsveda/PyScrappy/pull/148) — **MERGED / HUMAN MAINTAINER LOCALLY VERIFIED**
+- [`gren-lang/core` issue #134](https://github.com/gren-lang/core/issues/134) — Avoid a transient unsafe-integer intermediate while parsing `String.toInt` values near JavaScript's maximum safe integer boundary. [PR #135](https://github.com/gren-lang/core/pull/135) — **MERGED**
 - [`LobsterTrap/lola` issue #224](https://github.com/LobsterTrap/lola/issues/224) — Read module files as UTF-8 with optional BOM handling and write generated files explicitly as UTF-8 across supported targets. [PR #236](https://github.com/LobsterTrap/lola/pull/236) — **SUBMITTED**
 - [`griddynamics/rosetta` issue #260](https://github.com/griddynamics/rosetta/issues/260) — Carry a configurable turn limit from case or CLI input through the trial specification into the interaction engine while preserving the existing default when unset. [PR #284](https://github.com/griddynamics/rosetta/pull/284) — **SUBMITTED**
 - [`papra-hq/papra` issue #1417](https://github.com/papra-hq/papra/issues/1417) — Refresh reused document previews when navigation replaces the source document, including reactive text blobs and source-keyed PDF viewer lifecycle. [PR #1426](https://github.com/papra-hq/papra/pull/1426) — **SUBMITTED**
