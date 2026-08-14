@@ -249,6 +249,7 @@ For paid audit work, private review, or research collaboration, contact **Shin (
 - [`ritsth/job-autofill-extension` issue #198](https://github.com/ritsth/job-autofill-extension/issues/198) — Preserve known company and role metadata when re-saving a posting from a page that supplies blank values. [PR #215](https://github.com/ritsth/job-autofill-extension/pull/215) — **SUBMITTED**
 - [`Johnkothapalli/python-code-health-analyzer` issue #16](https://github.com/Johnkothapalli/python-code-health-analyzer/issues/16) — Recover from malformed cached reports as cache misses without hiding SQLite operational failures. [PR #19](https://github.com/Johnkothapalli/python-code-health-analyzer/pull/19) — **SUBMITTED**
 - [`mldsveda/PyScrappy` issue #144](https://github.com/mldsveda/PyScrappy/issues/144) — Preserve URL and adaptive-store context across derived selectors so chained adaptive selection keeps its site namespace. [PR #148](https://github.com/mldsveda/PyScrappy/pull/148) — **SUBMITTED**
+- [`LobsterTrap/lola` issue #224](https://github.com/LobsterTrap/lola/issues/224) — Read module files as UTF-8 with optional BOM handling and write generated files explicitly as UTF-8 across supported targets. [PR #236](https://github.com/LobsterTrap/lola/pull/236) — **SUBMITTED**
 
 These are public OSS contributions, not client engagements.
 
