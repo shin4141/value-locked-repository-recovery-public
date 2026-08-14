@@ -253,6 +253,8 @@ For paid audit work, private review, or research collaboration, contact **Shin (
 - [`mldsveda/PyScrappy` issue #144](https://github.com/mldsveda/PyScrappy/issues/144) — Preserve URL and adaptive-store context across derived selectors so chained adaptive selection keeps its site namespace. [PR #148](https://github.com/mldsveda/PyScrappy/pull/148) — **SUBMITTED**
 - [`LobsterTrap/lola` issue #224](https://github.com/LobsterTrap/lola/issues/224) — Read module files as UTF-8 with optional BOM handling and write generated files explicitly as UTF-8 across supported targets. [PR #236](https://github.com/LobsterTrap/lola/pull/236) — **SUBMITTED**
 - [`griddynamics/rosetta` issue #260](https://github.com/griddynamics/rosetta/issues/260) — Carry a configurable turn limit from case or CLI input through the trial specification into the interaction engine while preserving the existing default when unset. [PR #284](https://github.com/griddynamics/rosetta/pull/284) — **SUBMITTED**
+- [`papra-hq/papra` issue #1417](https://github.com/papra-hq/papra/issues/1417) — Refresh reused document previews when navigation replaces the source document, including reactive text blobs and source-keyed PDF viewer lifecycle. [PR #1426](https://github.com/papra-hq/papra/pull/1426) — **SUBMITTED**
+- [`griddynamics/rosetta` issue #225](https://github.com/griddynamics/rosetta/issues/225) — Route plan create and upsert writes through the existing non-empty name validation while preserving the omitted-name default. [PR #285](https://github.com/griddynamics/rosetta/pull/285) — **SUBMITTED**
 
 These are public OSS contributions, not client engagements.
 
