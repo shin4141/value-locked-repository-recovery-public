@@ -255,6 +255,7 @@ For paid audit work, private review, or research collaboration, contact **Shin (
 - [`griddynamics/rosetta` issue #260](https://github.com/griddynamics/rosetta/issues/260) — Carry a configurable turn limit from case or CLI input through the trial specification into the interaction engine while preserving the existing default when unset. [PR #284](https://github.com/griddynamics/rosetta/pull/284) — **SUBMITTED**
 - [`papra-hq/papra` issue #1417](https://github.com/papra-hq/papra/issues/1417) — Refresh reused document previews when navigation replaces the source document, including reactive text blobs and source-keyed PDF viewer lifecycle. [PR #1426](https://github.com/papra-hq/papra/pull/1426) — **SUBMITTED**
 - [`griddynamics/rosetta` issue #225](https://github.com/griddynamics/rosetta/issues/225) — Route plan create and upsert writes through the existing non-empty name validation while preserving the omitted-name default. [PR #285](https://github.com/griddynamics/rosetta/pull/285) — **SUBMITTED**
+- [`bmad-code-org/bmad-loop` issue #278](https://github.com/bmad-code-org/bmad-loop/issues/278) — Reject mismatched TOML scalar types across `limits.*` policy fields before coercion can silently change policy meaning. [PR #587](https://github.com/bmad-code-org/bmad-loop/pull/587) — **SUBMITTED**
 
 These are public OSS contributions, not client engagements.
 
