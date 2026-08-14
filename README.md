@@ -246,6 +246,9 @@ For paid audit work, private review, or research collaboration, contact **Shin (
 
 - [`pooza/makoto2` issue #54](https://github.com/pooza/makoto2/issues/54) — Distinguish an unreadable `/proc` boundary from a process that disappeared during enumeration, so the health result does not treat unknown state as clean. [PR #56](https://github.com/pooza/makoto2/pull/56) — **SUBMITTED**
 - [`rictaworks/questboard` issue #97](https://github.com/rictaworks/questboard/issues/97) — Show an existing member's current role when a share URL is opened while preserving the first-time join flow. [PR #151](https://github.com/rictaworks/questboard/pull/151) — **SUBMITTED**
+- [`ritsth/job-autofill-extension` issue #198](https://github.com/ritsth/job-autofill-extension/issues/198) — Preserve known company and role metadata when re-saving a posting from a page that supplies blank values. [PR #215](https://github.com/ritsth/job-autofill-extension/pull/215) — **SUBMITTED**
+- [`Johnkothapalli/python-code-health-analyzer` issue #16](https://github.com/Johnkothapalli/python-code-health-analyzer/issues/16) — Recover from malformed cached reports as cache misses without hiding SQLite operational failures. [PR #19](https://github.com/Johnkothapalli/python-code-health-analyzer/pull/19) — **SUBMITTED**
+- [`mldsveda/PyScrappy` issue #144](https://github.com/mldsveda/PyScrappy/issues/144) — Preserve URL and adaptive-store context across derived selectors so chained adaptive selection keeps its site namespace. [PR #148](https://github.com/mldsveda/PyScrappy/pull/148) — **SUBMITTED**
 
 These are public OSS contributions, not client engagements.
 
