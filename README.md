@@ -1,289 +1,121 @@
 # Value-Locked Repository Recovery
 
-**Find the boundary that breaks before your customers do.**
+## Repair the transition, not just the broken point.
 
-Evidence-bounded boundary audits for open-source software and AI-assisted systems.
+I investigate consequential state transitions: places where software says an action is **complete, settled, authorized, recorded, cancelled, or recovered**, while the underlying state or evidence may not fully support that meaning.
 
-**Paid, bounded private reviews available.** I examine software and AI-assisted systems where a local success signal may not prove the protected outcome — authority, billing, external effect, or durable state — is actually final.
+I do not compete on patch volume. The work is **boundary selection + transition integrity + completion evidence**.
 
-**Typical boundaries**
+> I don't just fix the broken point. I repair the transition so the system can move forward without carrying the same failure into its next state.
 
-- access revoked ≠ previously issued authority dead
-- retry succeeded ≠ first external effect never happened
-- billing completed ≠ every source cost recovered exactly once
+## Start with one consequential boundary
 
-**Representative proof:** In a controlled internal state-machine test, I reproduced a crash state where a run remained marked active while its documented completion and public restart path became unreachable. This is an internal validation example, not a client disclosure or a production-incident claim.
+A one-boundary review focuses on one repository or system, one important transition, and one agreed As-of scope. Typical boundaries include:
 
-**Trust boundary:** public or explicitly authorized source; local or synthetic testing; no production probing, customer data, or real credentials unless explicitly authorized.
+- retry, replay, rollback, and partial progress;
+- durable state and source-of-truth evidence;
+- authorization, revocation, and authority changes;
+- payment, refund, reconciliation, and settlement state; and
+- AI-agent approval, memory, handoff, and external effects.
 
-**Paid private review:** `siriusa.paper@gmail.com`
+Depending on the agreed scope and what the evidence supports, one review can return:
 
-### External OSS trust proof
+- a bounded diagnosis tied to a fixed version or commit;
+- a reproduced failure or a bounded disproof;
+- a repair when feasible within the agreed boundary;
+- focused regression and verification evidence;
+- explicit residual `UNKNOWN`s; and
+- a reusable condition or check for the same failure class.
 
-**3 independent upstream merges** across unrelated public repositories:
+### Trial entry
 
-- [`rictaworks/questboard` PR #151](https://github.com/rictaworks/questboard/pull/151) — **MERGED**
-- [`mldsveda/PyScrappy` PR #148](https://github.com/mldsveda/PyScrappy/pull/148) — **MERGED** after the maintainer locally verified the repair and regression coverage
-- [`gren-lang/core` PR #135](https://github.com/gren-lang/core/pull/135) — **MERGED**
+> You do not need to rely on me for every issue. Start with one bounded boundary. I leave the repair together with the conditions that help your team or AI question the same class of failure next time. If that proves useful, bring me back for the next consequential boundary.
 
-A fourth repair, [`pooza/makoto2` PR #56](https://github.com/pooza/makoto2/pull/56), has received substantive maintainer review; requested changes were addressed and re-review is pending.
+## What remains after the repair
 
-These are public OSS contributions, not client engagements or evidence of paid commercial conversion.
+The useful residue is not only a code change. A bounded engagement is designed to leave a restartable evidence path:
 
----
+```text
+fixed As-of scope
+-> failure condition
+-> before / after evidence
+-> focused verification
+-> residual UNKNOWNs
+-> reusable check for the next similar transition
+```
 
-## Why normal safety intuition is incomplete
+That residue can help a development team or its AI recognize the same class of contradiction later. It is not a claim of future-proof software or guaranteed compatibility with unknown future changes.
 
-Better models are valuable. They can improve reasoning, reduce answer errors, and make individual tasks more reliable.
+## External OSS evidence
 
-But **better model intelligence does not automatically repair the surrounding control boundary**: the permissions, state transitions, tool execution, retries, revocation paths, and external effects around the model.
+As of **2026-08-15**, there are **7 confirmed independent upstream merges** across unrelated public repositories. They demonstrate different boundary families rather than seven copies of the same repair.
 
-That distinction matters because many consequential failures do not begin with a bad model answer. They emerge across time, authority, execution, recovery, or scope expansion — even when each component appears to behave correctly in isolation.
+| Boundary family | What the merged repair preserved | Public evidence |
+| --- | --- | --- |
+| Partial progress / transport integrity | A partially written FIX frame continues from its unwritten suffix before later frames advance | [`wingfoil-io/wingfoil` PR #839 — MERGED](https://github.com/wingfoil-io/wingfoil/pull/839) |
+| Unknown state / truthful completion | An unreadable process boundary remains unknown instead of being treated as a disappeared, clean state | [`pooza/makoto2` PR #56 — MERGED](https://github.com/pooza/makoto2/pull/56) |
+| Durable metadata / absent input | Re-saving a job with blank page values does not erase already-known company and role metadata | [`ritsth/job-autofill-extension` PR #215 — MERGED](https://github.com/ritsth/job-autofill-extension/pull/215) |
+| Context transition / stale derived state | Changing workspace context clears graph state derived from the prior workspace | [`DataDave-Dev/weftmap` PR #175 — MERGED](https://github.com/DataDave-Dev/weftmap/pull/175) |
+| Representation / numeric integrity | Integer parsing near JavaScript's safe-integer boundary avoids a transient rounded intermediate | [`gren-lang/core` PR #135 — MERGED](https://github.com/gren-lang/core/pull/135) |
+| Derived object / source context | Chained adaptive selectors retain the URL and store context needed to preserve their meaning | [`mldsveda/PyScrappy` PR #148 — MERGED](https://github.com/mldsveda/PyScrappy/pull/148) |
+| Current state / entry-path meaning | An existing member sees the current role while the first-time share-link join flow remains intact | [`rictaworks/questboard` PR #151 — MERGED](https://github.com/rictaworks/questboard/pull/151) |
 
-These are different claims:
+These are public OSS contributions, not paid client engagements.
 
-- **Model accuracy ≠ system integrity**
-- **Local success ≠ end-to-end correctness**
-- **No visible incident ≠ a boundary that is still safe**
-- **Pilot-safe ≠ scale-safe**
-- **Current authority ≠ previously issued authority**
-- **Failure reported ≠ no external effect occurred**
+### Current submitted proof — open, not merged
 
-### Pilot-safe does not automatically mean scale-safe
+The following repairs are public and submitted, but remain **OPEN / NOT MERGED**. They are not included in the count above, and their presence does not claim maintainer acceptance.
 
-A rollout may begin with broad permission but little protected value. The pilot succeeds. Then more data, permissions, integrations, users, and consequential actions accumulate. If the original boundary is never re-qualified, evidence that the pilot was safe does not establish that the scaled system is safe.
+- **Durable transition:** materialized state is not the same as a durably recorded transition — [`vercel/workflow` PR #3575](https://github.com/vercel/workflow/pull/3575).
+- **Current authority chain:** an accepted policy mutation is not the same as a currently valid authority chain — [`cerbos/cerbos` PR #3328](https://github.com/cerbos/cerbos/pull/3328).
+- **Financial transition identity:** correlated payment evidence is not two independent financial transitions — [`mercurjs/mercur` PR #1399](https://github.com/mercurjs/mercur/pull/1399).
 
-This is not an argument against AI adoption or model improvement. It is a reason to test the system boundary again when the value, authority, or operating scope changes.
+`OPEN`, approval metadata, or CI status is never counted as a merge.
 
----
+## What this is not
 
-## What can still fail
+This is not:
 
-I look for boundary failures that normal component-level checks can miss:
+- high-volume AI patch production;
+- a generic bug-fixing queue;
+- a broad security audit or penetration test;
+- a promise to find a defect in every system;
+- a guarantee of future-proof software or unlimited scalability; or
+- a claim that an open pull request has been accepted.
 
-- authorization that survives revocation
-- state that changes between validation and execution
-- retries that repeat or compound external effects
-- temporary capabilities that outlive the boundary that was supposed to end them
-- a successful local operation that does not produce the intended durable result
+A valid bounded result may be a repair, a focused diagnosis, or evidence that disproves the suspected failure within the agreed conditions.
 
-The goal is not to produce the largest possible bug list.
+## Working boundary
 
-The goal is to identify **what the product is supposed to protect**, find where that protection stops propagating, and produce a bounded, reproducible proof before the failure reaches production.
+Unless explicitly agreed otherwise:
 
----
+- public or explicitly authorized source only;
+- local or synthetic testing;
+- no production probing, customer data, or real credentials;
+- no speculative severity inflation;
+- no public disclosure of active private findings; and
+- no silent expansion beyond the agreed boundary.
 
-## What I look for
+Seller-side verification, buyer-side review, upstream acceptance, and paid closure remain separate evidence states.
 
-**Protected Object → Hidden Equivalence → Frozen Prediction → Local Proof → Private Disclosure**
+## Request a one-boundary review
 
-### 1. Protected Object
+Email **siriusa.paper@gmail.com** with:
 
-First identify what actually matters:
+1. the repository, system, or workflow;
+2. the transition whose meaning matters;
+3. what could happen if that transition is incomplete or misleading;
+4. the relevant version, commit, or As-of date; and
+5. any evidence already available.
 
-- authorization
-- customer data
-- billing integrity
-- funds or assets
-- identity
-- contractual state
-- durable history
-- operational continuity
-- release integrity
+No continuing engagement is required. Scope, access, price, terms, and any corrective-care boundary are agreed separately before work begins.
 
-### 2. Hidden Equivalence
-
-Look for two things the current system treats as equivalent only because present conditions hide the difference.
-
-Examples:
-
-- current authority ≈ previously issued authority
-- successful operation ≈ durable result
-- retry ≈ idempotent recovery
-- validated state ≈ executed state
-- temporary credential ≈ temporary authority
-
----
-
-## How I prove it
-
-### 3. Frozen Prediction
-
-Before building the proof, the expected failure condition, impact range, difficulty, and stop conditions are recorded.
-
-Results are not relabeled afterward to make the discovery look easier or more important than it was.
-
-### 4. Local Proof
-
-Where possible, findings are reproduced with:
-
-- public or explicitly authorized source
-- fixed source state
-- synthetic data
-- local execution
-- normal product paths
-- deterministic before / after evidence
-
-### 5. Private Disclosure
-
-Active findings stay private while the recipient reviews them.
-
-Public disclosure is not the default operating mode.
-
----
-
-## What a qualified finding can look like
-
-These are abstract patterns, not disclosures of active cases.
-
-### Authority revocation
-
-A principal loses current authority, but a capability derived from its former authority remains executable.
-
-### Access revocation
-
-A sharing surface is removed, but previously issued viewer state can still generate fresh access.
-
-### Capability lifetime
-
-A credential described as short-lived continues to authorize state-changing operations after the expected expiry boundary.
-
-### Validation / execution drift
-
-A state is valid when checked, but a different state is used when the consequential action actually executes.
-
-### Recovery amplification
-
-An operation reports failure, recovery is attempted, and an external side effect from the first attempt survives — allowing the recovery action to compound it.
-
-### Representative validation example
-
-The following is an internal validation example, not a client disclosure or a claim about a production incident.
-
-In one state-machine system tested in a controlled environment, a crash could leave the run marked as still active while making the documented completion path unreachable. The local components had not necessarily failed in isolation, but the system no longer had a valid public restart point and could not reliably reach its own completion gate.
-
-The issue was reproduced as a **state-transition and restartability failure**, rather than described as a generic reliability concern. The evidence was preserved as an as-of result instead of rewriting the interrupted run as complete.
-
----
-
-## Available for private audit work
-
-I accept bounded private engagements for:
-
-- pre-release boundary audits
-- pre-expansion boundary audits
-- authorization and revocation review
-- billing, retry, and state-transition integrity review
-- AI-assisted workflow and agent-control review
-- local deterministic reproduction of suspected failures
-
-This is not a promise to find a vulnerability in every repository.
-
-A valid result may also be a bounded **disproof** showing that the suspected boundary is correctly enforced.
-
----
-
-## What you receive
-
-Depending on scope, a review can produce:
-
-- fixed as-of source state
-- explicit protected object
-- frozen failure hypothesis
-- deterministic reproduction or disproof
-- bounded impact statement
-- compact private evidence package
-- clear completion line
-
-Repair and regression work can be scoped separately after qualification.
-
----
-
-## Trust boundary
-
-Unless explicitly authorized otherwise:
-
-- public source only
-- local or synthetic testing
-- no production probing
-- no customer data
-- no real credentials
-- no speculative severity inflation
-- no public disclosure while private review is active
-- no silent expansion beyond the agreed test boundary
-
-Evidence is separated from interpretation.
-
-A finding is only claimed to the extent that the reproduced result supports it.
-
----
+You can also verify the operator through [Shin's GitHub profile](https://github.com/shin4141).
 
 ## Research lineage
 
-This work is informed by the Decision-OS research series, including work on:
-
-- as-of evaluation and release boundaries
-- survival-bounded planning
-- reconnectable state and memory
-- completion integrity
-- compound-loop governance
-- authority and protected-object boundaries
-
-Public research:
-
-https://github.com/shin4141/decision-os-paper
+This work is informed by the [Decision-OS research series](https://github.com/shin4141/decision-os-paper), including As-of evaluation, reconnectable state, completion integrity, authority boundaries, and compound learning.
 
 ---
 
-## Commercial availability
-
-I am an independent researcher and practitioner behind Value-Locked Repository Recovery.
-
-I am available for **paid, bounded private audit and review work** for repositories, AI-assisted systems, and operational workflows.
-
-Typical engagements focus on boundaries around:
-
-- authorization and revocation
-- billing and financial state
-- retries and external side effects
-- migrations and historical continuity
-- AI-agent permissions and execution
-- state transitions that can appear locally correct while the protected outcome is not yet final
-
-An engagement does not require a confirmed vulnerability in advance. A useful result may be either a reproducible finding or a bounded disproof showing that the suspected boundary is correctly enforced.
-
-For paid audit work, private review, or research collaboration, contact **Shin (@shin4141)** through the contact information on the GitHub profile.
-
-## Public OSS repair contributions
-
-**Independent upstream merges: 3**
-
-- [`pooza/makoto2` issue #54](https://github.com/pooza/makoto2/issues/54) — Distinguish an unreadable `/proc` boundary from a process that disappeared during enumeration, so the health result does not treat unknown state as clean. [PR #56](https://github.com/pooza/makoto2/pull/56) — **HUMAN SUBSTANTIVE REVIEWED / CHANGES ADDRESSED / RE-REVIEW PENDING**
-- [`rictaworks/questboard` issue #97](https://github.com/rictaworks/questboard/issues/97) — Show an existing member's current role when a share URL is opened while preserving the first-time join flow. [PR #151](https://github.com/rictaworks/questboard/pull/151) — **MERGED**
-- [`ritsth/job-autofill-extension` issue #198](https://github.com/ritsth/job-autofill-extension/issues/198) — Preserve known company and role metadata when re-saving a posting from a page that supplies blank values. [PR #215](https://github.com/ritsth/job-autofill-extension/pull/215) — **SUBMITTED**
-- [`Johnkothapalli/python-code-health-analyzer` issue #16](https://github.com/Johnkothapalli/python-code-health-analyzer/issues/16) — Recover from malformed cached reports as cache misses without hiding SQLite operational failures. [PR #19](https://github.com/Johnkothapalli/python-code-health-analyzer/pull/19) — **SUBMITTED**
-- [`mldsveda/PyScrappy` issue #144](https://github.com/mldsveda/PyScrappy/issues/144) — Preserve URL and adaptive-store context across derived selectors so chained adaptive selection keeps its site namespace. [PR #148](https://github.com/mldsveda/PyScrappy/pull/148) — **MERGED / HUMAN MAINTAINER LOCALLY VERIFIED**
-- [`gren-lang/core` issue #134](https://github.com/gren-lang/core/issues/134) — Avoid a transient unsafe-integer intermediate while parsing `String.toInt` values near JavaScript's maximum safe integer boundary. [PR #135](https://github.com/gren-lang/core/pull/135) — **MERGED**
-- [`LobsterTrap/lola` issue #224](https://github.com/LobsterTrap/lola/issues/224) — Read module files as UTF-8 with optional BOM handling and write generated files explicitly as UTF-8 across supported targets. [PR #236](https://github.com/LobsterTrap/lola/pull/236) — **SUBMITTED**
-- [`griddynamics/rosetta` issue #260](https://github.com/griddynamics/rosetta/issues/260) — Carry a configurable turn limit from case or CLI input through the trial specification into the interaction engine while preserving the existing default when unset. [PR #284](https://github.com/griddynamics/rosetta/pull/284) — **SUBMITTED**
-- [`papra-hq/papra` issue #1417](https://github.com/papra-hq/papra/issues/1417) — Refresh reused document previews when navigation replaces the source document, including reactive text blobs and source-keyed PDF viewer lifecycle. [PR #1426](https://github.com/papra-hq/papra/pull/1426) — **SUBMITTED**
-- [`griddynamics/rosetta` issue #225](https://github.com/griddynamics/rosetta/issues/225) — Route plan create and upsert writes through the existing non-empty name validation while preserving the omitted-name default. [PR #285](https://github.com/griddynamics/rosetta/pull/285) — **SUBMITTED**
-- [`bmad-code-org/bmad-loop` issue #278](https://github.com/bmad-code-org/bmad-loop/issues/278) — Reject mismatched TOML scalar types across `limits.*` policy fields before coercion can silently change policy meaning. [PR #587](https://github.com/bmad-code-org/bmad-loop/pull/587) — **SUBMITTED**
-
-These are public OSS contributions, not client engagements.
-
-## Private inquiries
-
-Private audit work and research collaboration are welcome.
-
-Contact **Shin (@shin4141)** through the contact information listed on the GitHub profile.
-
-If you are preparing a release, expanding permissions, changing billing flows, introducing more automation, or moving into a higher-risk operating state, a bounded review can be performed before production.
-
----
-
-## Disclosure note
-
-This repository intentionally contains **no active private vulnerability details**.
-
-Technical case evidence remains private until the applicable disclosure and release boundaries permit publication.
+This public repository intentionally contains no active private vulnerability details, customer-specific evidence, or claim of paid client experience.
