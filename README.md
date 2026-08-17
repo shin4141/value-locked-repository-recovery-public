@@ -48,7 +48,7 @@ That residue can help a development team or its AI recognize the same class of c
 
 ## External OSS evidence
 
-As of **2026-08-16**, there are **8 confirmed independent upstream merges** across unrelated public repositories. They demonstrate different boundary families rather than eight copies of the same repair.
+As of **2026-08-17**, there are **9 confirmed direct upstream merges across 8 independent public repositories**. Across those repositories, the merges cover multiple boundary families; `ritsth/job-autofill-extension` now contributes two direct upstream merges.
 
 | Boundary family | What the merged repair preserved | Public evidence |
 | --- | --- | --- |
@@ -56,14 +56,17 @@ As of **2026-08-16**, there are **8 confirmed independent upstream merges** acro
 | Partial progress / transport integrity | A partially written FIX frame continues from its unwritten suffix before later frames advance | [`wingfoil-io/wingfoil` PR #839 — MERGED](https://github.com/wingfoil-io/wingfoil/pull/839) |
 | Unknown state / truthful completion | An unreadable process boundary remains unknown instead of being treated as a disappeared, clean state | [`pooza/makoto2` PR #56 — MERGED](https://github.com/pooza/makoto2/pull/56) |
 | Durable metadata / absent input | Re-saving a job with blank page values does not erase already-known company and role metadata | [`ritsth/job-autofill-extension` PR #215 — MERGED](https://github.com/ritsth/job-autofill-extension/pull/215) |
+| Fallback extraction / source priority | Company detection can fall back to trimmed image `alt` text when visible text is absent, while visible text keeps priority and blank `alt` values continue selector fallthrough | [`ritsth/job-autofill-extension` PR #221 — MERGED](https://github.com/ritsth/job-autofill-extension/pull/221) |
 | Context transition / stale derived state | Changing workspace context clears graph state derived from the prior workspace | [`DataDave-Dev/weftmap` PR #175 — MERGED](https://github.com/DataDave-Dev/weftmap/pull/175) |
 | Representation / numeric integrity | Integer parsing near JavaScript's safe-integer boundary avoids a transient rounded intermediate | [`gren-lang/core` PR #135 — MERGED](https://github.com/gren-lang/core/pull/135) |
 | Derived object / source context | Chained adaptive selectors retain the URL and store context needed to preserve their meaning | [`mldsveda/PyScrappy` PR #148 — MERGED](https://github.com/mldsveda/PyScrappy/pull/148) |
 | Current state / entry-path meaning | An existing member sees the current role while the first-time share-link join flow remains intact | [`rictaworks/questboard` PR #151 — MERGED](https://github.com/rictaworks/questboard/pull/151) |
 
-One additional contribution was **not directly merged**, but the maintainer explicitly integrated the renderer-scope behavior into the canonical upstream release path and closed the competing PR to keep one delivery path: [`orion-agents/orion-code` PR #201](https://github.com/orion-agents/orion-code/pull/201). It is not included in the 8-merge count.
+The second `ritsth/job-autofill-extension` merge (#221) started from the previously accepted #215 merge state. It is repeat-acceptance evidence inside the same repository, so it increases the direct-merge count from 8 to 9 but does **not** increase the independent-repository count.
 
-These are public OSS contributions, not paid client engagements.
+One additional contribution was **not directly merged**, but the maintainer explicitly integrated the renderer-scope behavior into the canonical upstream release path and closed the competing PR to keep one delivery path: [`orion-agents/orion-code` PR #201](https://github.com/orion-agents/orion-code/pull/201). It is not included in the 9 direct-merge count.
+
+These are public OSS contributions, not paid client engagements or evidence of paid commercial conversion.
 
 ### Current submitted proof — open, not merged
 
