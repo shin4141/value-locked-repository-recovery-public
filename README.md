@@ -48,7 +48,7 @@ That residue can help a development team or its AI recognize the same class of c
 
 ## External OSS evidence
 
-As of **2026-08-17**, there are **9 confirmed direct upstream merges across 8 independent public repositories**. Across those repositories, the merges cover multiple boundary families; `ritsth/job-autofill-extension` now contributes two direct upstream merges.
+As of **2026-08-19**, there are **13 confirmed direct upstream merges across 10 independent public repositories**. Across those repositories, the merges cover multiple boundary families; `pooza/makoto2`, `ritsth/job-autofill-extension`, and `DataDave-Dev/weftmap` each contribute two direct upstream merges.
 
 | Boundary family | What the merged repair preserved | Public evidence |
 | --- | --- | --- |
@@ -61,10 +61,14 @@ As of **2026-08-17**, there are **9 confirmed direct upstream merges across 8 in
 | Representation / numeric integrity | Integer parsing near JavaScript's safe-integer boundary avoids a transient rounded intermediate | [`gren-lang/core` PR #135 — MERGED](https://github.com/gren-lang/core/pull/135) |
 | Derived object / source context | Chained adaptive selectors retain the URL and store context needed to preserve their meaning | [`mldsveda/PyScrappy` PR #148 — MERGED](https://github.com/mldsveda/PyScrappy/pull/148) |
 | Current state / entry-path meaning | An existing member sees the current role while the first-time share-link join flow remains intact | [`rictaworks/questboard` PR #151 — MERGED](https://github.com/rictaworks/questboard/pull/151) |
+| Configuration validation / service URL meaning | Service URLs preserve their HTTP(S)-only contract by rejecting misspelled or non-HTTP(S) schemes during configuration validation | [`pooza/makoto2` PR #94 — MERGED](https://github.com/pooza/makoto2/pull/94) |
+| Policy configuration / scalar-type integrity | `limits.*` policy values with mismatched TOML scalar types are rejected before construction instead of being silently coerced | [`bmad-code-org/bmad-loop` PR #587 — MERGED](https://github.com/bmad-code-org/bmad-loop/pull/587) |
+| Initialization retry / transient failure | A failed tree-sitter initialization remains a failure for the current caller while clearing the cached promise so a later request can retry | [`DataDave-Dev/weftmap` PR #178 — MERGED](https://github.com/DataDave-Dev/weftmap/pull/178) |
+| Rename transition / destination identity | Renamed and copied preview entries retain the destination path used for later status and diff lookup | [`getCodesema/codesema-cli` PR #32 — MERGED](https://github.com/getCodesema/codesema-cli/pull/32) |
 
-The second `ritsth/job-autofill-extension` merge (#221) started from the previously accepted #215 merge state. It is repeat-acceptance evidence inside the same repository, so it increases the direct-merge count from 8 to 9 but does **not** increase the independent-repository count.
+The second merge in each of `pooza/makoto2` (#94), `ritsth/job-autofill-extension` (#221), and `DataDave-Dev/weftmap` (#178) is repeat-acceptance evidence inside a repository already represented by #56, #215, and #175, respectively. Each increases the direct-merge count but does **not** increase the independent-repository count.
 
-One additional contribution was **not directly merged**, but the maintainer explicitly integrated the renderer-scope behavior into the canonical upstream release path and closed the competing PR to keep one delivery path: [`orion-agents/orion-code` PR #201](https://github.com/orion-agents/orion-code/pull/201). It is not included in the 9 direct-merge count.
+One additional contribution was **not directly merged**, but the maintainer explicitly integrated the renderer-scope behavior into the canonical upstream release path and closed the competing PR to keep one delivery path: [`orion-agents/orion-code` PR #201](https://github.com/orion-agents/orion-code/pull/201). It is not included in the 13 direct-merge count.
 
 These are public OSS contributions, not paid client engagements or evidence of paid commercial conversion.
 
